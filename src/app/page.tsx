@@ -23,6 +23,7 @@ export async function getRecipes(): Promise<Recipe[]> {
   const recipes = await fetch("http://localhost:4000/recipes").then((res) =>
     res.json()
   );
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   return recipes;
 }
 export default async function Home() {
